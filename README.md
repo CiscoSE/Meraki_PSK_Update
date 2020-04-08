@@ -1,4 +1,4 @@
-# Project Name
+# Meraki PSK Update
 
 Update the SSID PSK on all networks in your Meraki organization
 
