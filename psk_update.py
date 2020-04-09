@@ -38,6 +38,7 @@ import pandas as pd
 import requests
 from pathlib import Path
 
+from datetime import datetime as dt
 from meraki_sdk.meraki_sdk_client import MerakiSdkClient
 from meraki_sdk.exceptions.api_exception import APIException
 
@@ -249,18 +250,26 @@ def read_backup():
 
 
 def pd_ssid_csv(jsonFile):
-    # Create a CSV file from the JSON response
-    # pd.set_option("display.max_columns", 20)
-    timestr = time.strftime("%H%M%S")
-    file_name = "ssid-" + timestr + ".csv"
-    pdjsonData = pd.DataFrame(jsonFile, index=[0])
-    pdjsonData.to_csv(file_name)
-    pdjsonData = pd.DataFrame(
-        read_file,
-        columns=["authMode", "enabled", "name", "psk", "wpaEncryptionMode"],
+    file_name = "ssid.csv"
+    date = pd.to_datetime("today").normalize()
+    hms = time.strftime("%H:%M:%S")
+    pdHead = pd.DataFrame(
+        jsonFile,
         index=[0],
+        columns=[
+            "authMode",
+            "enabled",
+            "name",
+            "psk",
+            "wpaEncryptionMode",
+            "date",
+            "time",
+        ],
     )
-    print(f"New backup CSV file created: {file_name}")
+    pdHead["date"] = date
+    pdHead["time"] = hms
+    pdHead.to_csv(file_name)
+    print("Dataframe", pdHead, sep="\n")
     return
 
 
