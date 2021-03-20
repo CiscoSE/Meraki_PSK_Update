@@ -13,7 +13,7 @@ cookiecutter==1.7.0
 future==0.18.2
 idna==2.9
 isort==4.3.21
-Jinja2==2.11.1
+Jinja2==2.11.3
 jinja2-time==0.2.0
 jsonpickle==0.9.6
 lazy-object-proxy==1.4.3
