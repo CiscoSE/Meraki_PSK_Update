@@ -13,9 +13,6 @@ reserved. Unless required by applicable law or agreed to separately in
 writing, software distributed under the License is distributed on an "AS
 IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
-"""
-
-from __future__ import absolute_import, division, print_function
 
 __author__ = "Aaron Davis <aarodavi@cisco.com>"
 __contributors__ = []
@@ -23,22 +20,20 @@ __version__ = "0.1.0"
 __copyright__ = "Copyright (c) 2020 Cisco and/or its affiliates."
 __license__ = "Cisco Sample Code License, Version 1.1"
 
-"""
+
 Add the following environment variables to the machine that will
 run this script:
 Variable: "MERAKI_API"
 Value:  Your Meraki Dashboard API key
 """
 
+from __future__ import absolute_import, division, print_function
 import os
-import sys
 import json
 import time
+import sys
 import pandas as pd
 import requests
-from pathlib import Path
-
-from datetime import datetime as dt
 from meraki_sdk.meraki_sdk_client import MerakiSdkClient
 from meraki_sdk.exceptions.api_exception import APIException
 
