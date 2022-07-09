@@ -14,13 +14,6 @@ writing, software distributed under the License is distributed on an "AS
 IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
 
-__author__ = "Aaron Davis <aarodavi@cisco.com>"
-__contributors__ = []
-__version__ = "0.1.0"
-__copyright__ = "Copyright (c) 2020 Cisco and/or its affiliates."
-__license__ = "Cisco Sample Code License, Version 1.1"
-
-
 Add the following environment variables to the machine that will
 run this script:
 Variable: "MERAKI_API"
@@ -28,6 +21,13 @@ Value:  Your Meraki Dashboard API key
 """
 
 from __future__ import absolute_import, division, print_function
+
+__author__ = "Aaron Davis <aarodavi@cisco.com>"
+__contributors__ = []
+__version__ = "0.1.0"
+__copyright__ = "Copyright (c) 2020 Cisco and/or its affiliates."
+__license__ = "Cisco Sample Code License, Version 1.1"
+
 import os
 import json
 import time
